@@ -14,6 +14,18 @@ const router = createRouter({
       path: '/signup',
       name: 'signup',
       component: SignupVue
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: SignupVue,
+      props: { isLoginPage: true }
+    },
+    {
+      path: '/dashboard',
+      name: 'login',
+      component: SignupVue,
+      props: { isLoginPage: true }
     }
   ]
 })

@@ -3,7 +3,7 @@
     <div class="content-secion flex flex-column align-items-center">
       <div class="content-title-wrapper"><span>Grow</span><span class="font-green">2</span></div>
       <div class="create-account-section">
-        <div class="create-title">Create Free Account</div>
+        <div class="create-title">{{ isLoginPage ? 'Login' : 'Create Free Account' }}</div>
         <div class="create-body">
           Lorem Ipsum you the blocks and components you need to create a truly professional website.
         </div>
@@ -12,7 +12,7 @@
       <div class="form-card">
         <div class="form-container">
           <form @submit.prevent="submitForm">
-            <div class="form-group">
+            <div class="form-group" v-if="!isLoginPage">
               <input
                 type="text"
                 id="name"
@@ -40,7 +40,7 @@
                 placeholder="Create password"
               />
             </div>
-            <div class="form-group flex align-items-center">
+            <div class="form-group flex align-items-center" v-if="!isLoginPage">
               <!-- <input
                 type="checkbox"
                 class="custom-checkbox"
@@ -62,12 +62,14 @@
             <div class="form-group">
               <PrimeVueButton
                 type="submit"
-                v-bind:label="`Get started`"
+                v-bind:label="isLoginPage ? 'Login' : 'Get started'"
                 class="signup-button border-round-lg"
               ></PrimeVueButton>
             </div>
           </form>
-          <div class="already-account-section">Already have an account? <span>Log in</span></div>
+          <div v-if="!isLoginPage" class="already-account-section">
+            Already have an account? <span>Log in</span>
+          </div>
         </div>
       </div>
     </div>
@@ -83,6 +85,9 @@ export default {
   components: {
     Checkbox,
     PrimeVueButton: Button
+  },
+  props: {
+    isLoginPage: String
   },
   data() {
     return {

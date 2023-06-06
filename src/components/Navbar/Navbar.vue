@@ -11,32 +11,9 @@
       >
         <div class="signup-button-wrapper card flex justify-content-center">
           <button class="signup-button" @click="() => changeRoute('signup')">Sign Up</button>
-
-          <!-- <div class="card flex justify-content-center"> -->
-          <!-- <Dropdown
-                v-model="selectedOption"
-                :options="grow2Options"
-                optionLabel="name"
-                scrollHeight="500px"
-                placeholder="Grow 2"
-              >
-                <template #value="slotProps">
-                  <div v-if="slotProps.value" class="flex align-items-center">
-                    <div class="dropdown-options-label">{{ slotProps.value.name }}</div>
-                  </div>
-                </template>
-                <template #option="slotProps">
-                  <div class="flex align-items-center">
-                    <img
-                      :alt="slotProps.option.name"
-                      :src="`/src/assets/${slotProps.option.code}.svg`"
-                      class="mr-3 dropdown-logo"
-                    />
-                    <div class="dropdown-options-label">{{ slotProps.option.name }}</div>
-                  </div>
-                </template>
-              </Dropdown> -->
-          <!-- </div> -->
+        </div>
+        <div class="signup-button-wrapper card flex justify-content-center">
+          <button class="signup-button" @click="() => changeRoute('login')">Login</button>
         </div>
         <div class="navbar-link-wrapper" :onClick="toggleDropdown">
           <div class="flex align-items-center">
@@ -102,6 +79,9 @@
       <div class="navbar-link-wrapper">Contact Us</div>
       <div class="navbar-link-wrapper">
         <button class="signup-button" @click="changeRoute('signup')">Sign Up</button>
+      </div>
+      <div class="navbar-link-wrapper">
+        <button class="signup-button" @click="changeRoute('login')">Login</button>
       </div>
     </div>
     <div class="navbar-tablet-screen">

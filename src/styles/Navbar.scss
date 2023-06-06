@@ -54,9 +54,12 @@
     left: 0;
     right: 0;
     position: absolute;
-    top: 90px;
+    top: 76px;
     background-color: #062d49;
 
+    @include for-tablet-portrait-up {
+      top: 90px;
+    }
     &.tablet-screen {
       display: flex;
 
