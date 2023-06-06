@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+//core
+body {
+  margin: 0 !important;
+  font-family: 'Roboto' !important;
+  overflow-x: hidden;
+  background: #fafdff;
+}
+
+button {
+  font-family: 'Roboto' !important;
+}
+
+.p-component {
+  font-family: 'Roboto' !important;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+
+.grid {
+  margin: 0 !important;
+}
