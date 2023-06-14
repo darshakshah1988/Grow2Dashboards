@@ -2,7 +2,7 @@
   <nav :class="['navbar-section']">
     <div class="navbar-logo">
       <img src="@/assets/G2-grad.svg" alt="Logo" />
-      <div class="navbar-title-text" @click="changeRoute('/')">Grow2</div>
+      <div class="navbar-title-text" @click="changeRoute('/')">Grow<span>2</span></div>
     </div>
     <Transition name="slide-fade">
       <div

@@ -21,7 +21,8 @@
 }
 
 .navbar-logo img {
-  height: 40px;
+  height: 50px;
+  width: 50px;
   margin-right: 20px;
 }
 
@@ -35,6 +36,9 @@
     font-size: 24px;
     color: #f8fcff;
     cursor: pointer;
+    span {
+      color: #2aaf7f;
+    }
   }
 }
 

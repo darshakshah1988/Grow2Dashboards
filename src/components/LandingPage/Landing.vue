@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard-section">
+  <div class="landing-section">
     <div>
       <div
         class="dashboard-heading-wrapper flex-wrap flex align-items-center justify-content-around"
@@ -213,14 +213,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
 import Button from 'primevue/button'
 import Splitter from 'primevue/splitter'
 import SplitterPanel from 'primevue/splitterpanel'
 import Carousel from 'primevue/carousel'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'DashboardComponent',
+  name: 'LandingPageComponent',
   components: {
     PrimeVueButton: Button,
     Splitter,
@@ -392,4 +392,4 @@ export default defineComponent({
 })
 </script>
 
-<style src="../../styles/dashboard.scss"></style>
+<style src="../../styles/landing.scss"></style>

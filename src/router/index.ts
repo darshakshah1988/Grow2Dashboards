@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Dashboard from '../components/Dashboard/DashboardComponent.vue'
 import SignupVue from '@/components/Signup/Signup.vue'
+import LandingPage from '@/components/LandingPage/Landing.vue'
+import dashboardVue from '@/components/Dashboard/dashboard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +9,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Dashboard
+      component: LandingPage
     },
     {
       path: '/signup',
@@ -23,9 +24,8 @@ const router = createRouter({
     },
     {
       path: '/dashboard',
-      name: 'login',
-      component: SignupVue,
-      props: { isLoginPage: true }
+      name: 'dashboard',
+      component: dashboardVue
     }
   ]
 })
