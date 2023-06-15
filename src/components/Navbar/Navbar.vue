@@ -10,10 +10,10 @@
         v-if="isNavbarActive"
       >
         <div class="signup-button-wrapper card flex justify-content-center">
-          <button class="signup-button" @click="() => changeRoute('signup')">Sign Up</button>
+          <button class="signup-button" @click="() => changeRoute('dashboard')">Sign Up</button>
         </div>
         <div class="signup-button-wrapper card flex justify-content-center">
-          <button class="signup-button" @click="() => changeRoute('login')">Login</button>
+          <button class="signup-button" @click="() => changeRoute('dashboard')">Login</button>
         </div>
         <div class="navbar-link-wrapper" :onClick="toggleDropdown">
           <div class="flex align-items-center">
@@ -78,10 +78,10 @@
       <div class="navbar-link-wrapper">About Us</div>
       <div class="navbar-link-wrapper">Contact Us</div>
       <div class="navbar-link-wrapper">
-        <button class="signup-button" @click="changeRoute('signup')">Sign Up</button>
+        <button class="signup-button" @click="changeRoute('dashboard')">Sign Up</button>
       </div>
       <div class="navbar-link-wrapper">
-        <button class="signup-button" @click="changeRoute('login')">Login</button>
+        <button class="signup-button" @click="changeRoute('dashboard')">Login</button>
       </div>
     </div>
     <div class="navbar-tablet-screen">
