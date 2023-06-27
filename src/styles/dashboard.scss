@@ -22,12 +22,26 @@
     display: none;
   }
 }
+
+.left-sidebar-desktop {
+  flex-basis: 20%;
+}
+
+.right-sidebar-desktop {
+  flex-basis: 20%;
+}
 .main-dashboard-section {
+  flex-basis: auto;
+
+  margin: 0 auto;
   background: #f8ffff;
   padding: 50px 30px;
   display: flex;
   justify-content: center;
 
+  @include for-tablet-up {
+    flex-basis: 60%;
+  }
   @include for-tablet-landscape-up {
     padding: 50px 20px 80px 20px;
   }
@@ -121,7 +135,7 @@
     align-items: center;
     justify-content: space-around;
 
-    margin: 20px 0;
+    margin: 20px;
     .weekly-text {
       font-weight: 700;
       font-size: 14px;

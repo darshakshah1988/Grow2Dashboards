@@ -3,13 +3,13 @@
 .slideout-section-right {
   position: absolute;
   z-index: 1;
-  width: 375px;
+  width: 280px;
   top: 0;
   bottom: 0;
   right: 0;
   background-color: white;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(375px);
+  transform: translateX(280px);
 
   &.open {
     transform: translateX(0);

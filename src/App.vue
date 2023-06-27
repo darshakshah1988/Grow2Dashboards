@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import Navbar from './components/Navbar/Navbar.vue'
-import Footer from './components/Footer/Footer.vue'
-</script>
-
 <template>
   <Navbar />
   <div class="main-section">
@@ -11,3 +5,9 @@ import Footer from './components/Footer/Footer.vue'
   </div>
   <Footer />
 </template>
+
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+import Navbar from './components/Navbar/Navbar.vue'
+import Footer from './components/Footer/Footer.vue'
+</script>

@@ -9,11 +9,14 @@
         :class="['navbar-links tablet-screen', isNavbarActive && 'active']"
         v-if="isNavbarActive"
       >
-        <div class="signup-button-wrapper card flex justify-content-center">
-          <button class="signup-button" @click="() => changeRoute('dashboard')">Sign Up</button>
+        <div class="signup-button-wrapper card flex justify-content-center" v-if="!isLogin">
+          <button class="signup-button" @click="() => changeRoute('signup')">Sign Up</button>
         </div>
-        <div class="signup-button-wrapper card flex justify-content-center">
-          <button class="signup-button" @click="() => changeRoute('dashboard')">Login</button>
+        <div class="signup-button-wrapper card flex justify-content-center" v-if="!isLogin">
+          <button class="signup-button" @click="() => changeRoute('login')">Login</button>
+        </div>
+        <div class="signup-button-wrapper card flex justify-content-center" v-if="isLogin">
+          <button class="signup-button" @click="handleLogOut()">logout</button>
         </div>
         <div class="navbar-link-wrapper" :onClick="toggleDropdown">
           <div class="flex align-items-center">
@@ -77,11 +80,14 @@
       </div>
       <div class="navbar-link-wrapper">About Us</div>
       <div class="navbar-link-wrapper">Contact Us</div>
-      <div class="navbar-link-wrapper">
-        <button class="signup-button" @click="changeRoute('dashboard')">Sign Up</button>
+      <div class="navbar-link-wrapper" v-if="!isLogin">
+        <button class="signup-button" @click="changeRoute('signup')">Sign Up</button>
       </div>
-      <div class="navbar-link-wrapper">
-        <button class="signup-button" @click="changeRoute('dashboard')">Login</button>
+      <div class="navbar-link-wrapper" v-if="!isLogin">
+        <button class="signup-button" @click="changeRoute('login')">Login</button>
+      </div>
+      <div class="navbar-link-wrapper" v-if="isLogin">
+        <button class="signup-button" @click="handleLogOut()">logout</button>
       </div>
     </div>
     <div class="navbar-tablet-screen">
@@ -95,15 +101,17 @@
 
 <script lang="ts">
 import Dropdown from 'primevue/dropdown'
+import store from '../../store/store'
+import { mapState } from 'vuex'
 
 export default {
   name: 'NavbarComponent',
   components: {
     Dropdown
   },
-
   data() {
     return {
+      isLogin: false,
       isOpen: false,
       isNavbarActive: false,
 
@@ -131,10 +139,52 @@ export default {
     selectOption(option: { label: string }) {
       this.selectedOption = option.label
       this.isOpen = false
+    },
+    handleLogOut() {
+      localStorage.setItem('userData', '')
+      store.dispatch('setUser', {})
+
+      this.changeRoute('/')
+    },
+
+    getUserDetails() {
+      // get token from localstorage
+      let token = localStorage.getItem('userData')
+
+      try {
+        //decode token here and attach to the user object
+        if (token && token.length) {
+          console.log('here')
+          let decoded = JSON.parse(token)
+          store.dispatch('setUser', decoded)
+          this.isLogin = true
+        }
+      } catch (error) {
+        store.dispatch('setUser', {})
+        console.log(error, 'error from decoding token')
+      }
     }
   },
   created() {
-    console.log(this.selectedOption)
+    this.getUserDetails()
+  },
+  computed: {
+    user() {
+      return store.getters.getUser
+    }
+  },
+  watch: {
+    user: {
+      deep: true,
+      handler(newUser) {
+        console.log(newUser, '>>>>>')
+        if (newUser?.email && newUser?.password) {
+          this.isLogin = true
+        } else {
+          this.isLogin = false
+        }
+      }
+    }
   }
 }
 </script>

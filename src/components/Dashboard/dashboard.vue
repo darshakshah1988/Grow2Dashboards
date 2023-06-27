@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="grid">
-      <div :class="`${isOpenLeftSidebar && !isMobile ? 'col-2' : ''}`">
+      <div :class="`${isOpenLeftSidebar && !isMobile ? 'left-sidebar-desktop' : ''}`">
         <SidebarComponent
           :isMobile="isMobile"
           :isOpen="isOpenLeftSidebar"
@@ -166,7 +166,10 @@
           </div>
         </div>
       </div>
-      <div class="" :class="`${isOpenRightSidebar && !isMobile ? 'col-2' : ''}`">
+      <div
+        class=""
+        :class="`${isOpenRightSidebar && !isMobile ? 'right-sidebar-desktop relative' : ''}`"
+      >
         <ChatSidebarComponent
           :isMobile="isMobile"
           :isOpen="isOpenRightSidebar"
