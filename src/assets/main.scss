@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap');
+@import '../styles/function.scss';
 
 //core
 body {
@@ -7,7 +9,13 @@ body {
   overflow-x: hidden;
   background: #fafdff;
 }
+.main-section {
+  padding-top: 76px;
 
+  @include for-tablet-landscape-up {
+    padding-top: 90px;
+  }
+}
 button {
   font-family: 'Roboto' !important;
 }

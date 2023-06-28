@@ -4,10 +4,24 @@ import { createStore } from 'vuex'
 const store = createStore({
   state() {
     return {
-      count: 0
+      userData: {}
     }
   },
-  mutations: {}
+  mutations: {
+    SET_USER(state: { userData: {} }, userData: {}) {
+      state.userData = userData
+    }
+  },
+  actions: {
+    setUser({ commit }, userData: {}) {
+      commit('SET_USER', userData)
+    }
+  },
+  getters: {
+    getUser(state: any) {
+      return state.userData
+    }
+  }
 })
 
 export default store

@@ -52,7 +52,7 @@
                 class="custom-checkbox"
                 v-model="formData.agreeTerms"
                 required
-                value="term&cond"
+                :binary="formData.agreeTerms"
               />
 
               <label class="checkbox-label" for="terms">
@@ -79,6 +79,8 @@
 <script lang="ts">
 import Checkbox from 'primevue/checkbox'
 import Button from 'primevue/button'
+import { json } from 'stream/consumers'
+import store from '../../store/store'
 
 export default {
   name: 'SignUpComponent',
@@ -91,6 +93,7 @@ export default {
   },
   data() {
     return {
+      user: '',
       formData: {
         name: '',
         email: '',
@@ -99,10 +102,34 @@ export default {
       }
     }
   },
+  created() {
+    this.getUserDetails()
+  },
   methods: {
-    submitForm() {
-      // Handle form submission here
-      console.log(this.formData)
+    getUserDetails() {
+      // get token from localstorage
+      let token = localStorage.getItem('userData')
+
+      try {
+        //decode token here and attach to the user object
+        if (token) {
+          let decoded = JSON.parse(token)
+          store.dispatch('setUser', decoded)
+          this.$router.push('/dashboard')
+        }
+      } catch (error) {
+        // return error in production env
+        console.log(error, 'error from decoding token')
+      }
+    },
+    async submitForm() {
+      try {
+        localStorage.setItem('userData', JSON.stringify(this.formData))
+        store.dispatch('setUser', this.formData)
+        this.$router.push('/dashboard')
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 }
