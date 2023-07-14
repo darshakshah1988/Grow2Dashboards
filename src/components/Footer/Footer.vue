@@ -14,7 +14,7 @@
             <div class="flex">Follow us on</div>
             <div class="flex flex-row justify-content-between social-links-section">
               <div class="social-links flex" v-for="links in socials">
-                <div><img :src="`../../src/assets/${links}`" /></div>
+                <div><img :src="links" /></div>
               </div>
             </div>
           </div>
@@ -34,6 +34,13 @@
 </template>
 
 <script lang="ts">
+import twitterIcon from '@/assets/twitter.svg'
+import instagramIcon from '@/assets/instagram.svg'
+import facebookIcon from '@/assets/facebook.svg'
+import tiktokIcon from '@/assets/tik-tok.svg'
+import spotifyIcon from '@/assets/spotify.svg'
+import youtubeIcon from '@/assets/youtube.svg'
+
 export default {
   name: 'FooterComponent',
 
@@ -67,14 +74,7 @@ export default {
           ]
         }
       ],
-      socials: [
-        'twitter.svg',
-        'instagram.svg',
-        'facebook.svg',
-        'tik-tok.svg',
-        'spotify.svg',
-        'youtube.svg'
-      ]
+      socials: [twitterIcon, instagramIcon, facebookIcon, tiktokIcon, spotifyIcon, youtubeIcon]
     }
   }
 }
