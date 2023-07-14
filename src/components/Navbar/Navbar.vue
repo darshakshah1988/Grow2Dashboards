@@ -22,7 +22,7 @@
           <div class="flex align-items-center">
             <div class="pr-3">Grow 2</div>
             <div :class="['flex', 'align-items-center', !isOpen && 'rotate-180']">
-              <img :src="`/src/assets/down-arrow.svg`" class="dropdown-logo" />
+              <img src="@/assets/down-arrow.svg" class="dropdown-logo" />
             </div>
           </div>
           <Transition name="slide-fade">
@@ -33,11 +33,7 @@
                 :key="code"
               >
                 <div class="flex align-items-center">
-                  <img
-                    :alt="item.name"
-                    :src="`/src/assets/${item.code}.svg`"
-                    class="mr-3 dropdown-logo"
-                  />
+                  <img :alt="item.name" :src="item.code" class="mr-3 dropdown-logo" />
                   <div class="dropdown-options-label">{{ item.name }}</div>
                 </div>
               </div>
