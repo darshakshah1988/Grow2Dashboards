@@ -218,6 +218,9 @@ import Splitter from 'primevue/splitter'
 import SplitterPanel from 'primevue/splitterpanel'
 import Carousel from 'primevue/carousel'
 import { defineComponent } from 'vue'
+import userReview0 from '@/assets/review-user-0.png'
+import userReview1 from '@/assets/review-user-1.png'
+import userReview2 from '@/assets/review-user-2.png'
 
 export default defineComponent({
   name: 'LandingPageComponent',
@@ -230,11 +233,7 @@ export default defineComponent({
 
   data() {
     return {
-      products: [
-        '/src/assets/review-user-0.png',
-        '/src/assets/review-user-1.png',
-        '/src/assets/review-user-2.png'
-      ],
+      products: [userReview0, userReview1, userReview2],
       responsiveOptions: [
         {
           breakpoint: '1199px',
