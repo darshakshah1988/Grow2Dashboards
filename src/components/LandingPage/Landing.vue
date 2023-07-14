@@ -238,7 +238,7 @@ import dashboardImg5 from '@/assets/dashboard-img5.png'
 
 import reviewUser0 from '@/assets/review-user-0.png'
 import reviewUser1 from '@/assets/review-user-1.png'
-import reviewUser2 from '@/assets/review-user-2png'
+import reviewUser2 from '@/assets/review-user-2.png'
 
 export default defineComponent({
   name: 'LandingPageComponent',
