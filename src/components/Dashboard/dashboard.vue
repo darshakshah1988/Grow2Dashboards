@@ -134,10 +134,7 @@
                 <div class="socials-wrapper" v-for="social in socials.slice(0, 2)">
                   <div class="logo">
                     <div>
-                      <img
-                        :class="`logo-img ${social.title.toLowerCase()}`"
-                        :src="`../../src/assets/${social.img}`"
-                      />
+                      <img :class="`logo-img ${social.title.toLowerCase()}`" :src="social.img" />
                     </div>
                   </div>
                   <div :class="`social-name ${social.title.toLowerCase()}`">
@@ -150,10 +147,7 @@
                 <div class="socials-wrapper" v-for="social in socials.slice(2, 4)">
                   <div class="logo">
                     <div>
-                      <img
-                        :class="`logo-img ${social.title.toLowerCase()}`"
-                        :src="`../../src/assets/${social.img}`"
-                      />
+                      <img :class="`logo-img ${social.title.toLowerCase()}`" :src="social.img" />
                     </div>
                   </div>
                   <div :class="`social-name ${social.title.toLowerCase()}`">
@@ -186,6 +180,11 @@ import ProgressBarComponent from '../Common/ProgressBar/Progressbar.vue'
 import SidebarComponent from './Sidebar.vue'
 import ChatSidebarComponent from './chatSidebar.vue'
 
+import facebookIcon from '@/assets/facebook.svg'
+import instaIcon from '@/assets/dark-insta.svg'
+import tiktokIcon from '@/assets/dark-tiktok.svg'
+import twitterIcon from '@/assets/twitter.svg'
+
 export default {
   name: 'DashboardComponent',
 
@@ -210,19 +209,19 @@ export default {
       isOpenRightSidebar: true,
       socials: [
         {
-          img: 'facebook.svg',
+          img: facebookIcon,
           title: 'Facebook'
         },
         {
-          img: 'dark-insta.svg',
+          img: instaIcon,
           title: 'Instagram'
         },
         {
-          img: 'dark-tiktok.svg',
+          img: tiktokIcon,
           title: 'TikTok'
         },
         {
-          img: 'twitter.svg',
+          img: twitterIcon,
           title: 'Twitter'
         }
       ]

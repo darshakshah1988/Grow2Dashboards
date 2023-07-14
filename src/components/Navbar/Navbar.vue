@@ -68,7 +68,7 @@
                 <div class="flex align-items-center">
                   <img
                     :alt="slotProps.option.name"
-                    :src="`/src/assets/${slotProps.option.code}.svg`"
+                    :src="slotProps.option.code"
                     class="mr-3 dropdown-logo"
                   />
                   <div class="dropdown-options-label">{{ slotProps.option.name }}</div>
@@ -103,6 +103,11 @@
 import Dropdown from 'primevue/dropdown'
 import store from '../../store/store'
 import { mapState } from 'vuex'
+import G2C from '@/assets/G2C.svg'
+import G2LE from '@/assets/G2LE.svg'
+import G2M from '@/assets/G2M.svg'
+import G2LF from '@/assets/G2LF.svg'
+import G2A from '@/assets/G2A.svg'
 
 export default {
   name: 'NavbarComponent',
@@ -118,11 +123,11 @@ export default {
       selectedOption: '',
 
       grow2Options: [
-        { name: 'Grow2 Create', code: 'G2C' },
-        { name: 'Grow2 Learn', code: 'G2LE' },
-        { name: 'Grow2 Marketplace', code: 'G2M' },
-        { name: 'Grow2 Life', code: 'G2LF' },
-        { name: 'Grow2 Academy', code: 'G2A' }
+        { name: 'Grow2 Create', code: G2C },
+        { name: 'Grow2 Learn', code: G2LE },
+        { name: 'Grow2 Marketplace', code: G2M },
+        { name: 'Grow2 Life', code: G2LF },
+        { name: 'Grow2 Academy', code: G2A }
       ]
     }
   },
@@ -177,7 +182,6 @@ export default {
     user: {
       deep: true,
       handler(newUser) {
-        console.log(newUser, '>>>>>')
         if (newUser?.email && newUser?.password) {
           this.isLogin = true
         } else {
