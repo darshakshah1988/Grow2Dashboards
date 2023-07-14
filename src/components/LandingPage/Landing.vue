@@ -218,6 +218,27 @@ import Splitter from 'primevue/splitter'
 import SplitterPanel from 'primevue/splitterpanel'
 import Carousel from 'primevue/carousel'
 import { defineComponent } from 'vue'
+import userReview0 from '@/assets/review-user-0.png'
+import userReview1 from '@/assets/review-user-1.png'
+import userReview2 from '@/assets/review-user-2.png'
+
+import listpadIcon from '@/assets/listpad.svg'
+import laptopIcon from '@/assets/laptop.svg'
+import gamificationIcon from '@/assets/gamification.svg'
+
+import bookImage from '@/assets/book.png'
+import lampImage from '@/assets/lamp.png'
+import monitorScreenImage from '@/assets/monitorscreen.png'
+
+import dashboardImg4 from '@/assets/dashboard-img4.png'
+import dashboardImg2 from '@/assets/dashboard-img2.png'
+import dashboardImg3 from '@/assets/dashboard-img3.png'
+import dashboardImg1 from '@/assets/dashboard-img1.png'
+import dashboardImg5 from '@/assets/dashboard-img5.png'
+
+import reviewUser0 from '@/assets/review-user-0.png'
+import reviewUser1 from '@/assets/review-user-1.png'
+import reviewUser2 from '@/assets/review-user-2.png'
 
 export default defineComponent({
   name: 'LandingPageComponent',
@@ -230,11 +251,7 @@ export default defineComponent({
 
   data() {
     return {
-      products: [
-        '/src/assets/review-user-0.png',
-        '/src/assets/review-user-1.png',
-        '/src/assets/review-user-2.png'
-      ],
+      products: [userReview0, userReview1, userReview2],
       responsiveOptions: [
         {
           breakpoint: '1199px',
@@ -249,19 +266,19 @@ export default defineComponent({
       ],
       communityCardDetails: [
         {
-          icon: '/src/assets/listpad.svg',
+          icon: listpadIcon,
           title: 'Forums and Discussion Boards',
           text: `Our discussion boards are the perfect place for users to ask questions, share insights, and exchange ideas with others in the community. 
           You can connect with fellow tradespeople, apprentices, content creators, and business owners to get the support and inspiration you need to grow.`
         },
         {
-          icon: '/src/assets/laptop.svg',
+          icon: laptopIcon,
           title: 'Webinars and Events',
           text: `We host regular webinars and events on a variety of topics to help users enhance their skills and stay up to date with industry trends. 
           These events are also a great way to meet and connect with other members of the community.`
         },
         {
-          icon: '/src/assets/gamification.svg',
+          icon: gamificationIcon,
           title: 'Gamification',
           text: `We've incorporated gamification techniques into our platform to make the learning process more engaging and fun. You can earn badges, 
           complete challenges, and compete with other users to level up and show off your skills.`
@@ -269,17 +286,17 @@ export default defineComponent({
       ],
       learnAndGrowDetails: [
         {
-          img: '/src/assets/book.png',
+          img: bookImage,
           title: 'Education',
           text: `How-to guides and tutorials on various trade-related topics.`
         },
         {
-          img: '/src/assets/lamp.png',
+          img: lampImage,
           title: 'Industry',
           text: `Thought leadership articles and insights from industry experts`
         },
         {
-          img: '/src/assets/monitorscreen.png',
+          img: monitorScreenImage,
           title: 'Case study',
           text: `Case studies and success stories highlighting the achievements of our users`
         }
@@ -299,7 +316,7 @@ export default defineComponent({
           },
           buttonText: 'Learn more about Grow2 Create',
           buttonLink: '',
-          img: '/src/assets/dashboard-img4.png'
+          img: dashboardImg4
         },
         {
           id: 2,
@@ -315,7 +332,7 @@ export default defineComponent({
           },
           buttonText: 'Sign up for Grow2 Learn now',
           buttonLink: '',
-          img: '/src/assets/dashboard-img2.png'
+          img: dashboardImg2
         },
         {
           id: 3,
@@ -330,7 +347,7 @@ export default defineComponent({
           },
           buttonText: 'Join Grow2 Marketplace today',
           buttonLink: '',
-          img: '/src/assets/dashboard-img3.png'
+          img: dashboardImg3
         },
         {
           id: 4,
@@ -346,7 +363,7 @@ export default defineComponent({
           },
           buttonText: 'Learn more about Grow2 Life',
           buttonLink: '',
-          img: '/src/assets/dashboard-img1.png'
+          img: dashboardImg1
         },
         {
           id: 5,
@@ -361,7 +378,7 @@ export default defineComponent({
           },
           buttonText: 'Join Grow2 Academy & build your career path today',
           buttonLink: '',
-          img: '/src/assets/dashboard-img5.png'
+          img: dashboardImg5
         }
       ],
       usersReviews: [
@@ -370,21 +387,21 @@ export default defineComponent({
             The creator content has really helped me stay up- to -
             date with the latest industry trends and enhance my skills.I highly recommend it to other business owners.”`,
           reviewBy: 'Darshak Shah',
-          reviewImg: '/src/assets/review-user-0.png'
+          reviewImg: reviewUser0
         },
         {
           review: `“I was blown away by the resources available on Grow2 Learn. As a trade educator,
             I appreciate the focus on using VARK to educate tradespeople.
            It's a game-changer in the industry, and I'm proud to be a part of it.”`,
           reviewBy: 'Darshak Shah',
-          reviewImg: '/src/assets/review-user-1.png'
+          reviewImg: reviewUser1
         },
         {
           review: `“Grow2 Life has been an amazing resource for me. I was able to connect with
           a mentor who has helped me navigate the challenges of being a tradeswoman.
           It's great to have a supportive community of like-minded individuals.”`,
           reviewBy: 'Darshak Shah',
-          reviewImg: '/src/assets/review-user-2.png'
+          reviewImg: reviewUser2
         }
       ]
     }
